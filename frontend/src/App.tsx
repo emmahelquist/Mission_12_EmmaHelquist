@@ -13,7 +13,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<BooksPage />} />
-            <Route path="/donate/:title/:bookID" element={<DonatePage />} />
+            <Route
+              path="/donate/:title/:bookID/:price"
+              element={<DonatePage />}
+            />
             <Route path="/books" element={<BooksPage />} />
             <Route path="/cart" element={<CartPage />} />
           </Routes>

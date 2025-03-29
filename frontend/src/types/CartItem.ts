@@ -1,5 +1,7 @@
 export interface CartItem {
   bookID: number;
   Title: string;
-  donationAmount: number;
+  bookAmount: number;
+  quantity: number;
+  totalPrice: number;
 }
