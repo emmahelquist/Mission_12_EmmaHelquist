@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/test/Desktop/FakeAmazon/backend/FakeAmazon.API/FakeAmazon.API.csproj": {}
+    "/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/FakeAmazon.API.csproj": {}
   },
   "projects": {
-    "/Users/test/Desktop/FakeAmazon/backend/FakeAmazon.API/FakeAmazon.API.csproj": {
+    "/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/FakeAmazon.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/test/Desktop/FakeAmazon/backend/FakeAmazon.API/FakeAmazon.API.csproj",
+        "projectUniqueName": "/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/FakeAmazon.API.csproj",
         "projectName": "FakeAmazon.API",
-        "projectPath": "/Users/test/Desktop/FakeAmazon/backend/FakeAmazon.API/FakeAmazon.API.csproj",
+        "projectPath": "/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/FakeAmazon.API.csproj",
         "packagesPath": "/Users/test/.nuget/packages/",
-        "outputPath": "/Users/test/Desktop/FakeAmazon/backend/FakeAmazon.API/obj/",
+        "outputPath": "/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/test/.nuget/NuGet/NuGet.Config"

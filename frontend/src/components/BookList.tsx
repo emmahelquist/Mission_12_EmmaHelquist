@@ -1,20 +1,29 @@
 import { useEffect, useState } from 'react';
-import { Book } from './types/book';
+import { Book } from '../types/book';
+import { useNavigate } from 'react-router-dom';
 
-function BookList() {
+function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   // Stuff I need
   const [books, setBooks] = useState<Book[]>([]);
   const [pageSize, setPageSize] = useState<number>(10);
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
-  const [sorted, setSorted] = useState(false);
+  const navigate = useNavigate();
 
   // Don't overload the server, add pagination
   useEffect(() => {
+    const categoryParams = selectedCategories
+      .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
+      .join('&');
+
     const fetchBooks = async () => {
       const response = await fetch(
-        `https://localhost:5000/api/book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}`
+        `https://localhost:5000/api/book/AllBooks?pageSize=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`,
+        {
+          // Pass the cookie
+          credentials: 'include',
+        }
       );
       const data = await response.json();
       setBooks(data.books);
@@ -23,20 +32,7 @@ function BookList() {
     };
 
     fetchBooks();
-  }, [pageSize, pageNum]);
-
-  // Function to sort books by name
-  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
-
-  const sortBooksByName = () => {
-    const sortedBooks = [...books].sort((a, b) =>
-      sortDirection === 'asc'
-        ? a.title.localeCompare(b.title)
-        : b.title.localeCompare(a.title)
-    );
-    setBooks(sortedBooks);
-    setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc'); // Toggle sort direction
-  };
+  }, [pageSize, pageNum, totalItems, selectedCategories]);
 
   // HTML structure
   return (
@@ -44,10 +40,6 @@ function BookList() {
       <h1>Books</h1>
       <br />
       <h4>Made by Emma Helquist</h4>
-      <br />
-      <button onClick={sortBooksByName} disabled={sorted}>
-        Sort by Book Name
-      </button>
       <br />
       <br />
       {books.map((b) => (
@@ -76,6 +68,12 @@ function BookList() {
               <li>
                 <strong>Price: </strong> ${b.price}
               </li>
+              <button
+                className="btn btn-success"
+                onClick={() => navigate(`/donate/${b.title}/${b.bookID}`)}
+              >
+                Order
+              </button>
             </ul>
           </div>
         </div>

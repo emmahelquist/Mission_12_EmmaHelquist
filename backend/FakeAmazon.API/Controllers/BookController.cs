@@ -21,14 +21,22 @@ namespace FakeAmazon.API.Controllers
 
         // Controller for loading all the books, includes pagination
         [HttpGet("AllBooks")]
-        public IActionResult Get(int pageSize = 5, int pageNum = 1)
-        {
+        public IActionResult Get(int pageSize = 5, int pageNum = 1, [FromQuery] List<string>? Category = null)
+        {   
+            // Diff between list: built for queries
+            var query = _bookContext.Books.AsQueryable();
+            if (Category != null && Category.Any())
+            {
+                query = query.Where(b => Category.Contains(b.Category));
+            }
+
             var something = _bookContext.Books
                 .Skip((pageNum - 1) * pageSize )
                 .Take(pageSize)
                 .ToList();
             
-            var totalNumBooks = _bookContext.Books.Count();
+            // Update this
+            var totalNumBooks = query.Count();
 
             var someObject = new
             {
@@ -40,6 +48,18 @@ namespace FakeAmazon.API.Controllers
             return Ok(someObject);
 
         }
+
+        [HttpGet("GetBookTypes")]
+        public IActionResult GetBookTypes()
+        {
+            var bookTypes = _bookContext.Books
+                .Select(b => b.Category)
+                .Distinct()
+                .ToList();
+
+                return Ok(bookTypes);
+        }
+
         
     } 
 }
