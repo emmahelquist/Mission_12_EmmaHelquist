@@ -30,22 +30,23 @@ namespace FakeAmazon.API.Controllers
                 query = query.Where(b => Category.Contains(b.Category));
             }
 
-            var something = _bookContext.Books
+             // Update this
+            var totalNumBooks = query.Count();
+
+            var books = query
                 .Skip((pageNum - 1) * pageSize )
                 .Take(pageSize)
                 .ToList();
             
-            // Update this
-            var totalNumBooks = query.Count();
 
-            var someObject = new
+            var response = new
             {
-                Books = something,
+                Books = books,
                 Total = totalNumBooks
             };
 
             // Return the full object
-            return Ok(someObject);
+            return Ok(response);
 
         }
 

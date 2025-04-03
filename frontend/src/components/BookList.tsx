@@ -14,7 +14,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
   // Don't overload the server, add pagination
   useEffect(() => {
     const categoryParams = selectedCategories
-      .map((cat) => `bookTypes=${encodeURIComponent(cat)}`)
+      .map((cat) => `category=${encodeURIComponent(cat)}`)
       .join('&');
 
     const fetchBooks = async () => {
@@ -29,6 +29,7 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
       setBooks(data.books);
       setTotalItems(data.total);
       setTotalPages(Math.ceil(data.total / pageSize));
+      console.log(selectedCategories);
     };
 
     fetchBooks();
@@ -70,7 +71,9 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
               </li>
               <button
                 className="btn btn-success"
-                onClick={() => navigate(`/donate/${b.title}/${b.bookID}/${b.price}`)}
+                onClick={() =>
+                  navigate(`/donate/${b.title}/${b.bookID}/${b.price}`)
+                }
               >
                 Order
               </button>
