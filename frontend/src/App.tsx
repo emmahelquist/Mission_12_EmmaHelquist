@@ -1,5 +1,4 @@
 import './App.css';
-import BookList from './components/BookList';
 import { CartProvider } from './context/CartContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BooksPage from './pages/BooksPage';

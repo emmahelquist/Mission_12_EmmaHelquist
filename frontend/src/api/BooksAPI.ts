@@ -5,7 +5,7 @@ interface FetchBooksResponse {
   totalNumBooks: number;
 }
 
-const API_URL = `https://fakeamazonmission13emmahelquist-f8a5c8dseebvg3hh.eastus2-01.azurewebsites.net/api/book`;
+const API_URL = `https://localhost:5000/api/book`;
 
 // Grab the books
 export const fetchBooks = async (
