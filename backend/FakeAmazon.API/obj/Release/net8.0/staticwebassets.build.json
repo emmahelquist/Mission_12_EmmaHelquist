@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dq0c05Cj+oQcmWqFie0LoQpbh/i+ZCmlQH8e7aOI1y0=",
+  "Source": "FakeAmazon.API",
+  "BasePath": "_content/FakeAmazon.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

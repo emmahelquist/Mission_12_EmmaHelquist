@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/357eca02-173d-4fc3-97f1-8c00fbb0e303/resourceGroups/appsvc_windows_eastus2/providers/Microsoft.Web/sites/FakeAmazonEmmaBackend",
+  "appService.deploySubpath": "backend/FakeAmazon.API/publish"
+}
