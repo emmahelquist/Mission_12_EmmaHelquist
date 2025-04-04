@@ -29,7 +29,6 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
       setBooks(data.books);
       setTotalItems(data.total);
       setTotalPages(Math.ceil(data.total / pageSize));
-      console.log(selectedCategories);
     };
 
     fetchBooks();

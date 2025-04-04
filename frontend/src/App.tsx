@@ -1,5 +1,4 @@
 import './App.css';
-import BookList from './components/BookList';
 import { CartProvider } from './context/CartContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BooksPage from './pages/BooksPage';
@@ -15,7 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<BooksPage />} />
             <Route
-              path="/donate/:title/:bookID/:price"
+              path="/donate/:title/:bookID/:bookAmount"
               element={<DonatePage />}
             />
             <Route path="/books" element={<BooksPage />} />

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FakeAmazon.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1292f38bb66a0ef44a6c126d65b115f9fe6e7e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1f6fd4fdd9578c046fccd3261c715f990cde884")]
 [assembly: System.Reflection.AssemblyProductAttribute("FakeAmazon.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FakeAmazon.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
