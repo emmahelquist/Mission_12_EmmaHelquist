@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext';
 const CartSummary = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
-  const cartTotal = cart.reduce((sum, item) => sum + item.bookAmount, 0);
+  const cartTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
 
   return (
     <div

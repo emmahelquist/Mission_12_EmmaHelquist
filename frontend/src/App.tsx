@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<BooksPage />} />
             <Route
-              path="/donate/:title/:bookID/:price"
+              path="/donate/:title/:bookID/:bookAmount"
               element={<DonatePage />}
             />
             <Route path="/books" element={<BooksPage />} />

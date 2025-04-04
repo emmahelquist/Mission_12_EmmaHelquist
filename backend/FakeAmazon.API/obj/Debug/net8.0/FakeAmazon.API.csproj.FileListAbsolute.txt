@@ -266,3 +266,8 @@
 /Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/obj/Debug/net8.0/FakeAmazon.API.genruntimeconfig.cache
 /Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/obj/Debug/net8.0/ref/FakeAmazon.API.dll
 /Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/bin/Debug/net8.0/Bookstore.sqlite
+/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/bin/Debug/net8.0/publish/web.config
+/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/bin/Debug/net8.0/publish/appsettings.json
+/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/bin/Debug/net8.0/publish/FakeAmazon.API.deps.json
+/Users/test/Desktop/FakeAmazon-1/backend/FakeAmazon.API/bin/Debug/net8.0/publish/FakeAmazon.API.runtimeconfig.json

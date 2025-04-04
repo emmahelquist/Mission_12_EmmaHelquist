@@ -6,27 +6,32 @@ import WelcomeBand from '../components/WelcomeBand';
 
 function DonatePage() {
   const navigate = useNavigate();
-  const { title, bookID, price } = useParams();
+  const { title, bookID, bookAmount } = useParams();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(0);
 
+  // Convert to number safely (with fallback)
+  const numericBookID = Number(bookID);
+  const numericBookAmount = Number(bookAmount) || 0;
+
   const handleAddToCart = () => {
     const newItem: CartItem = {
-      bookID: Number(bookID),
+      bookID: numericBookID,
       Title: title || 'No Project Found',
-      Price: Number(price),
+      bookAmount: numericBookAmount,
       quantity,
-      totalPrice: price * quantity,
+      totalPrice: numericBookAmount * quantity,
     };
     addToCart(newItem);
     navigate('/cart');
+    console.log('Params:', { title, bookID, bookAmount });
   };
 
   return (
     <>
       <WelcomeBand />
       <h2>How many copies of {title} would you like to order?</h2>
-      <p>Price per book: ${price}</p>
+      <p>Price per book: ${numericBookAmount.toFixed(2)}</p>
       <div>
         <input
           type="number"
